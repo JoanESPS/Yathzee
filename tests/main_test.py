@@ -67,3 +67,13 @@ def test_yahtzee():
     yahtzee_value = score_card['yahtzee']
     # Assert
     assert yahtzee_value == 50
+
+
+def test_full_house():
+    # Arrange
+    main.hand = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(3)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    full_house_value = score_card['full_house']
+    # Assert
+    assert full_house_value == 25
