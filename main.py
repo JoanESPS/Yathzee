@@ -38,4 +38,8 @@ def score_card_completion(player_hand):
                 or (counter_by_value[4], counter_by_value[5]) != (0, 0))):
         score_card['small_straight'] = 30
 
+    if ((counter_by_value[1], counter_by_value[2], counter_by_value[3], counter_by_value[4]) != (0, 0, 0, 0)
+            and (counter_by_value[0] != 0 or counter_by_value[5] != 0)):
+        score_card['large_straight'] = 40
+
     return score_card
