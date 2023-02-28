@@ -87,3 +87,13 @@ def test_small_straight():
     small_straight_value = score_card['small_straight']
     # Assert
     assert small_straight_value == 30
+
+
+def test_large_straight():
+    # Arrange
+    main.hand = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(5)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    large_straight_value = score_card['large_straight']
+    # Assert
+    assert large_straight_value == 40
