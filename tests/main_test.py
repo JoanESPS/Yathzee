@@ -1,6 +1,7 @@
 import main
 import mock
 from Dice import Dice
+from ScoreCard import score_card
 
 
 def test_five_dices_values():
@@ -12,7 +13,8 @@ def test_sum_of_3_ones():
     # Arrange
     main.hand = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(5)]
     # Act
-    test_sum_of_three_ones = main.sum_of_ones(main.hand)
+    main.sum_of_dices_by_value(main.hand)
+    test_sum_of_three_ones = score_card['ones']
     # Assert
     assert test_sum_of_three_ones == 3
 
@@ -20,6 +22,7 @@ def test_sum_of_2_twos():
     # Arrange
     main.hand = [Dice(2), Dice(2), Dice(1), Dice(3), Dice(5)]
     # Act
-    test_sum_of_two_twos = main.sum_of_twos(main.hand)
+    main.sum_of_dices_by_value(main.hand)
+    test_sum_of_two_twos = score_card['twos']
     # Assert
     assert test_sum_of_two_twos == 4

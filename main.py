@@ -1,22 +1,15 @@
 import random
 from Hand import Hand
+from ScoreCard import score_card
 
 
 hand = Hand()
 hand.roll_dices()
 
 
-def sum_of_ones(player_hand):
-    score = 0
+def sum_of_dices_by_value(player_hand):
+    combination_names = list(score_card.keys())
     for dice in player_hand:
-        if dice.value == 1:
-            score += dice.value
-    return score
+        score_card[combination_names[dice.value - 1]] += dice.value
+    return True
 
-
-def sum_of_twos(player_hand):
-    score = 0
-    for dice in player_hand:
-        if dice.value == 2:
-            score += dice.value
-    return score
