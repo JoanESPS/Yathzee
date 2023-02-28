@@ -22,4 +22,4 @@ def test_sum_of_2_twos():
     # Act
     test_sum_of_two_twos = main.sum_of_twos(main.hand)
     # Assert
-    assert test_sum_of_three_ones == 4
+    assert test_sum_of_two_twos == 4
