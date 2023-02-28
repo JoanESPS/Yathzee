@@ -31,9 +31,9 @@ def test_sum_of_2_twos():
 
 def test_chance():
     # Arrange
-    main.hand = [Dice(1), Dice(2), Dice(1), Dice(3), Dice(5)]
+    main.hand = [Dice(1), Dice(2), Dice(1), Dice(4), Dice(5)]
     # Act
     main.sum_of_dices_by_value(main.hand)
     test_of_chance_value = score_card['chance']
     # Assert
-    assert test_of_chance_value == 12
+    assert test_of_chance_value == 13
