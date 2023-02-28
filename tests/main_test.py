@@ -1,5 +1,6 @@
 import main
 import mock
+from Dice import Dice
 
 
 def test_five_dices_values():
@@ -7,10 +8,9 @@ def test_five_dices_values():
         assert dice.value in range(1, 7)
 
 
-@mock.patch('main.sum_of_ones')
 def test_sum_of_3_ones():
     # Arrange
-    main.hand = [1, 1, 1, 3, 5]
+    main.hand = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(5)]
     # Act
     test_sum_of_three_ones = main.sum_of_ones(main.hand)
     # Assert
