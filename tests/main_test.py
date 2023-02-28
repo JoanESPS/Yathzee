@@ -77,3 +77,13 @@ def test_full_house():
     full_house_value = score_card['full_house']
     # Assert
     assert full_house_value == 25
+
+
+def test_small_straight():
+    # Arrange
+    main.hand = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(3)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    small_straight_value = score_card['small_straight']
+    # Assert
+    assert small_straight_value == 30
