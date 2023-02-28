@@ -57,3 +57,13 @@ def test_four_of_a_kind():
     four_of_a_kind_value = score_card['four_of_a_kind']
     # Assert
     assert four_of_a_kind_value == 9
+
+
+def test_yahtzee():
+    # Arrange
+    main.hand = [Dice(1), Dice(1), Dice(1), Dice(1), Dice(1)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    yahtzee_value = score_card['yahtzee']
+    # Assert
+    assert yahtzee_value == 50
