@@ -28,4 +28,7 @@ def score_card_completion(player_hand):
     if 4 in counter_by_value:
         score_card['four_of_a_kind'] = sum_of_dices_values
 
+    if 5 in counter_by_value:
+        score_card['yahtzee'] = 50
+
     return score_card
