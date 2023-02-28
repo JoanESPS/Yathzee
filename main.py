@@ -24,6 +24,8 @@ def score_card_completion(player_hand):
 
     if 3 in counter_by_value:
         score_card['three_of_a_kind'] = sum_of_dices_values
+        if 2 in counter_by_value:
+            score_card['full_house'] = 25
 
     if 4 in counter_by_value:
         score_card['four_of_a_kind'] = sum_of_dices_values
