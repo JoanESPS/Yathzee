@@ -2,7 +2,6 @@ import random
 from Hand import Hand
 from ScoreCard import init_score_card
 
-
 hand = Hand()
 hand.roll_dices()
 
@@ -18,7 +17,7 @@ def score_card_completion(player_hand):
 
     combination_names = list(score_card.keys())
     for i in range(6):
-        score_card[combination_names[i]] += counter_by_value[i] * (i+1)
+        score_card[combination_names[i]] += counter_by_value[i] * (i + 1)
 
     score_card['chance'] = sum_of_dices_values
 
@@ -32,5 +31,11 @@ def score_card_completion(player_hand):
 
     if 5 in counter_by_value:
         score_card['yahtzee'] = 50
+
+    if ((counter_by_value[2], counter_by_value[3]) != (0, 0)
+            and ((counter_by_value[0]), (counter_by_value[1]) != (0, 0)
+                or (counter_by_value[1], counter_by_value[4]) != (0, 0)
+                or (counter_by_value[4], counter_by_value[5]) != (0, 0))):
+        score_card['small_straight'] = 30
 
     return score_card
