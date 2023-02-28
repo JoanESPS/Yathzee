@@ -47,3 +47,13 @@ def test_three_of_a_kind():
     three_of_a_kind_value = score_card['three_of_a_kind']
     # Assert
     assert three_of_a_kind_value == 12
+
+
+def test_four_of_a_kind():
+    # Arrange
+    main.hand = [Dice(1), Dice(1), Dice(1), Dice(1), Dice(5)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    four_of_a_kind_value = score_card['four_of_a_kind']
+    # Assert
+    assert four_of_a_kind_value == 9
