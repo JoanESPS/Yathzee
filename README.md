@@ -10,9 +10,10 @@ Avant de lancer les tests :
 
 Pour lancer les tests dans le terminal :
 
-    cd 'chemin_du_projet'
-    pytest
-  
-ou si ça ne fonctionne pas :
-
+    cd 'cheminDuProjet'
     python -m pytest tests/
+
+
+Pour lancer les dés et afficher la feuille de score correspondante :
+    
+    python main.py
