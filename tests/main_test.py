@@ -11,7 +11,7 @@ def test_five_dices_values():
 
 def test_sum_of_3_ones():
     # Arrange
-    main.hand = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(5)]
+    main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(5)]
     # Act
     score_card = main.score_card_completion(main.hand)
     test_sum_of_three_ones = score_card['ones']
@@ -21,7 +21,7 @@ def test_sum_of_3_ones():
 
 def test_sum_of_2_twos():
     # Arrange
-    main.hand = [Dice(2), Dice(2), Dice(1), Dice(3), Dice(5)]
+    main.hand.dices = [Dice(2), Dice(2), Dice(1), Dice(3), Dice(5)]
     # Act
     score_card = main.score_card_completion(main.hand)
     test_sum_of_two_twos = score_card['twos']
@@ -31,7 +31,7 @@ def test_sum_of_2_twos():
 
 def test_chance():
     # Arrange
-    main.hand = [Dice(1), Dice(2), Dice(1), Dice(4), Dice(5)]
+    main.hand.dices = [Dice(1), Dice(2), Dice(1), Dice(4), Dice(5)]
     # Act
     score_card = main.score_card_completion(main.hand)
     test_of_chance_value = score_card['chance']
@@ -41,7 +41,7 @@ def test_chance():
 
 def test_three_of_a_kind():
     # Arrange
-    main.hand = [Dice(1), Dice(1), Dice(1), Dice(4), Dice(5)]
+    main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(4), Dice(5)]
     # Act
     score_card = main.score_card_completion(main.hand)
     three_of_a_kind_value = score_card['three_of_a_kind']
@@ -51,7 +51,7 @@ def test_three_of_a_kind():
 
 def test_four_of_a_kind():
     # Arrange
-    main.hand = [Dice(1), Dice(1), Dice(1), Dice(1), Dice(5)]
+    main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(1), Dice(5)]
     # Act
     score_card = main.score_card_completion(main.hand)
     four_of_a_kind_value = score_card['four_of_a_kind']
@@ -61,7 +61,7 @@ def test_four_of_a_kind():
 
 def test_yahtzee():
     # Arrange
-    main.hand = [Dice(1), Dice(1), Dice(1), Dice(1), Dice(1)]
+    main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(1), Dice(1)]
     # Act
     score_card = main.score_card_completion(main.hand)
     yahtzee_value = score_card['yahtzee']
@@ -71,7 +71,7 @@ def test_yahtzee():
 
 def test_full_house():
     # Arrange
-    main.hand = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(3)]
+    main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(3)]
     # Act
     score_card = main.score_card_completion(main.hand)
     full_house_value = score_card['full_house']
@@ -81,7 +81,7 @@ def test_full_house():
 
 def test_small_straight():
     # Arrange
-    main.hand = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(3)]
+    main.hand.dices = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(3)]
     # Act
     score_card = main.score_card_completion(main.hand)
     small_straight_value = score_card['small_straight']
@@ -91,7 +91,7 @@ def test_small_straight():
 
 def test_large_straight():
     # Arrange
-    main.hand = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(5)]
+    main.hand.dices = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(5)]
     # Act
     score_card = main.score_card_completion(main.hand)
     large_straight_value = score_card['large_straight']

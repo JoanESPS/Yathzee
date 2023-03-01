@@ -1,5 +1,6 @@
 import random
 from Hand import Hand
+from Dice import Dice
 from ScoreCard import init_score_card
 
 hand = Hand()
@@ -11,7 +12,7 @@ def score_card_completion(player_hand):
     sum_of_dices_values = 0
 
     counter_by_value = [0, 0, 0, 0, 0, 0]
-    for dice in player_hand:
+    for dice in player_hand.dices:
         counter_by_value[dice.value - 1] += 1
         sum_of_dices_values += dice.value
 
@@ -32,14 +33,20 @@ def score_card_completion(player_hand):
     if 5 in counter_by_value:
         score_card['yahtzee'] = 50
 
-    if ((counter_by_value[2], counter_by_value[3]) != (0, 0)
-            and ((counter_by_value[0]), (counter_by_value[1]) != (0, 0)
-                or (counter_by_value[1], counter_by_value[4]) != (0, 0)
-                or (counter_by_value[4], counter_by_value[5]) != (0, 0))):
+    if (counter_by_value[2] != 0 and counter_by_value[3] != 0
+            and counter_by_value[0] != 0 and counter_by_value[1] != 0
+                                        or counter_by_value[1] != 0 and counter_by_value[4] != 0
+                                        or counter_by_value[4] != 0 and counter_by_value[5] != 0):
         score_card['small_straight'] = 30
 
-    if ((counter_by_value[1], counter_by_value[2], counter_by_value[3], counter_by_value[4]) != (0, 0, 0, 0)
+    if (counter_by_value[1] != 0 and counter_by_value[2] != 0 and counter_by_value[3] != 0 and counter_by_value[4] != 0
             and (counter_by_value[0] != 0 or counter_by_value[5] != 0)):
         score_card['large_straight'] = 40
 
     return score_card
+
+
+print(f'Ma main est : {hand.dices}')
+score_card = score_card_completion(hand)
+print(score_card)
+
