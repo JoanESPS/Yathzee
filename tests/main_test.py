@@ -147,3 +147,13 @@ def test_large_straight():
     large_straight_value = score_card['large_straight']
     # Assert
     assert large_straight_value == 40
+
+
+def test_large_straight_ko():
+    # Arrange
+    main.hand.dices = [Dice(1), Dice(4), Dice(6), Dice(3), Dice(6)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    large_straight_value = score_card['large_straight']
+    # Assert
+    assert large_straight_value == 0
