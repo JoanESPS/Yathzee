@@ -129,6 +129,16 @@ def test_small_straight():
     assert small_straight_value == 30
 
 
+def test_small_straight_ko():
+    # Arrange
+    main.hand.dices = [Dice(1), Dice(4), Dice(5), Dice(5), Dice(3)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    small_straight_value = score_card['small_straight']
+    # Assert
+    assert small_straight_value == 0
+
+
 def test_large_straight():
     # Arrange
     main.hand.dices = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(5)]
