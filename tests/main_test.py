@@ -89,6 +89,16 @@ def test_yahtzee():
     assert yahtzee_value == 50
 
 
+def test_yahtzee_ko():
+    # Arrange
+    main.hand.dices = [Dice(1), Dice(1), Dice(6), Dice(1), Dice(1)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    yahtzee_value = score_card['yahtzee']
+    # Assert
+    assert yahtzee_value == 0
+
+
 def test_full_house():
     # Arrange
     main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(3), Dice(3)]
