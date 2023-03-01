@@ -69,6 +69,16 @@ def test_four_of_a_kind():
     assert four_of_a_kind_value == 9
 
 
+def test_four_of_a_kind_ko():
+    # Arrange
+    main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(4), Dice(5)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    four_of_a_kind_value = score_card['four_of_a_kind']
+    # Assert
+    assert four_of_a_kind_value == 0
+
+
 def test_yahtzee():
     # Arrange
     main.hand.dices = [Dice(1), Dice(1), Dice(1), Dice(1), Dice(1)]
