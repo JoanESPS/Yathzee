@@ -109,6 +109,16 @@ def test_full_house():
     assert full_house_value == 25
 
 
+def test_full_house_ko():
+    # Arrange
+    main.hand.dices = [Dice(1), Dice(2), Dice(1), Dice(3), Dice(3)]
+    # Act
+    score_card = main.score_card_completion(main.hand)
+    full_house_value = score_card['full_house']
+    # Assert
+    assert full_house_value == 0
+
+
 def test_small_straight():
     # Arrange
     main.hand.dices = [Dice(1), Dice(4), Dice(2), Dice(3), Dice(3)]
